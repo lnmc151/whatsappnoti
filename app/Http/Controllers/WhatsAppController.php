@@ -130,7 +130,7 @@ class WhatsAppController extends Controller
         ]);
 
         // ดึงข้อมูลจาก API
-        $response = Http::get('https://pg-hrm.dms.go.th/sys/meetingRoom/api_noti.php');
+        $response = Http::get('API');
 
         if ($response->successful()) {
             $data = $response->json();
