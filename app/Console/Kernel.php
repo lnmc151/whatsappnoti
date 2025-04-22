@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
             // $response = Http::get('https://pg-hrm.dms.go.th/sys/meetingRoom/api_noti.php');
             $response = Http::withOptions([
                 'verify' => false, // ปิดการตรวจสอบ SSL
-            ])->get('https://pg-hrm.dms.go.th/sys/meetingRoom/api_noti.php');
+            ])->get('API');
             
             // ถ้าการเรียก API สำเร็จ
             if ($response->successful()) {
@@ -39,7 +39,7 @@ class Kernel extends ConsoleKernel
                 $message = "การแจ้งเตือนห้องประชุม: \n" . $meetingDetails;
                 
                 // กำหนด chat_id ที่ต้องการ
-                $chatId = '120363396335102170@g.us'; // chat_id
+                $chatId = 'ID ROOM Chat'; // chat_id
                     
                 // Dispatch job และส่งค่า chatId, message
                 SendWhatsAppNotification::dispatch($chatId, $message);
